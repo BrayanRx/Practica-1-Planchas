@@ -19,21 +19,25 @@ public class Main {
             System.out.println("Ingreso 1: "); cuenta.ingresar(ent.nextLong());
             System.out.println("Ingreso 2: "); cuenta.ingresar(ent.nextLong());
             System.out.println("Retiro 1: "); cuenta.retirar(ent.nextLong());
+            Cuentas.add(cuenta);
+
         }
         double maxsaldo=0;
         double salprom=0;
+        System.out.println("Detalle de cuentas:");
         for(CuentaBancaria cuent : Cuentas) {
+            cuent.imprimirDetalle();
             salprom+=cuent.getSaldo();
             if (cuent.getSaldo() > maxsaldo) maxsaldo = cuent.getSaldo();
         }
         salprom/=n;
-        System.out.println("Saldo promedio de cuentas = " + salprom);
-        System.out.println("Cuenta(s) con mayor saldo:");
+        System.out.println("\nSaldo promedio de cuentas = " + salprom);
+        System.out.println("Cuenta(s) con mayor saldo:\n");
         for(CuentaBancaria cuent : Cuentas) {
             if (cuent.getSaldo() == maxsaldo) {
-                System.out.println("N Cuenta: " + cuent.getNcuenta());
+                cuent.imprimirDetalle();
                 cuent.formateaDNI();
-                System.out.println("Saldo: " + cuent.getSaldo());
+
             }
         }
     }

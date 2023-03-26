@@ -35,7 +35,7 @@ public class CuentaBancaria {
     }
     public void imprimirDetalle(){
         System.out.println("Nro Cuenta: " + ncuenta);
-        System.out.println("DNI: " + ncuenta);
+        System.out.println("DNI: " + DNI);
         System.out.println("Saldo: " + saldo);
         System.out.println("Interes anual: " + interesanual + "%");
     }
